@@ -18,14 +18,24 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
         <meta name="format-detection" content="telephone=no" />
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Barcode Scanner Demo</title>
+        <title>check ticketing</title>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
     </head>
     <body>
         <div class="app">
+        	<ul style="font-size:24px;list-style:none;">
+        		<li>演出名称：<output id="name"></output></li>
+        		<li>演出时间：<output id="showTime"></output></li>
+        		<li>座位等级：<output id="class"></output></li>
+        		<li>演出厅室：<output id="room"></output></li>
+        		<li>座位排号：<output id="row"></output></li>
+        		<li>座位座号：<output id="column"></output></li>
+        	</ul>
             <p><a href="#" class="topcoat-button" id="scan" style="font-size:24px;">扫码</a></p>
+            <!-- <p><button style="font-size:24px;" onclick="load('http://tickets.yangliping.com/check.php', 'code=1234');return false;">扫码</button></p>          -->
             <p id="info"></p>
         </div>
         <script type="text/javascript" src="cordova.js"></script>

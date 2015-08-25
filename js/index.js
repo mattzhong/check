@@ -16,6 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+function load(url, code) {
+	$.get(url, code, function(data) {
+    	eval(data);
+    });
+}
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -58,16 +64,21 @@ var app = {
 
         scanner.scan( function (result) { 
 
-            alert("We got a barcode\n" + 
-            "Result: " + result.text + "\n" + 
-            "Format: " + result.format + "\n" + 
-            "Cancelled: " + result.cancelled);  
+            // alert("We got a barcode\n" + 
+            // "Result: " + result.text + "\n" + 
+            // "Format: " + result.format + "\n" + 
+            // "Cancelled: " + result.cancelled);  
 
            console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
                 "format: " + result.format + "\n" +
                 "cancelled: " + result.cancelled + "\n");
-            document.getElementById("info").innerHTML = result.text;
+                
+            // document.getElementById("info").innerHTML = result.text;
+            // $.get("http://tickets.yangliping.com/check.php", result.text, function(data) {
+            	// $("info").html(data);
+            // });
+            load("http://tickets.yangliping.com/check.php", "code=" + result.text);
             console.log(result);
             /*
             if (args.format == "QR_CODE") {
