@@ -67,7 +67,14 @@ var app = {
             // alert("We got a barcode\n" + 
             // "Result: " + result.text + "\n" + 
             // "Format: " + result.format + "\n" + 
-            // "Cancelled: " + result.cancelled);  
+            // "Cancelled: " + result.cancelled);
+            
+            $("#name").val("");
+            $("#showTime").val("");
+            $("#class").val("");
+            $("#room").val("");
+            $("#row").val("");
+            $("#column").val("");
 
            console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
