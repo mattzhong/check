@@ -18,7 +18,6 @@
  */
 function load(url, code) {
 	$.get(url, code, function(data) {
-		alert(data);
     	eval(data);
     });
 }
